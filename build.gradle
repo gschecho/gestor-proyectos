@@ -1,0 +1,80 @@
+plugins {
+	id 'org.springframework.boot' version '3.2.5'
+	id 'io.spring.dependency-management' version '1.1.4'
+	id 'java'
+	id 'application'
+	id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+group = 'com.springBoot_javaFXS_base'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+}
+
+javafx {
+	version = "21"
+	modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+	// SPRING BOOT
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework.boot:spring-boot-devtools'
+
+	// JPA + H2
+	runtimeOnly 'com.h2database:h2'
+
+	// Lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// JavaFX: solo controles y FXML (interfaz)
+	// JavaFX se carga por el plugin openjfx abajo
+}
+
+javafx {
+	version = "21"
+	modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+application {
+	mainClass = 'com.springBoot_javaFXS_base.MainApp'
+	applicationDefaultJvmArgs = [
+			"--module-path", "/Users/gon/Documents/JavaFX_SDK/javafx-sdk-21.0.7/lib",
+			"--add-modules", "javafx.controls,javafx.fxml"
+	]
+}
+
+
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
