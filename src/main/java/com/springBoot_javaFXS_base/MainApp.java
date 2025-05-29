@@ -1,5 +1,6 @@
 package com.springBoot_javaFXS_base;
 
+import com.springBoot_javaFXS_base.logica.BaseDeDatos;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+
+import java.util.List;
 
 public class MainApp extends Application {
 
@@ -36,15 +39,34 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) {
 
+        // Ejemplo de uso de JdbcTemplate desde el contexto Spring
+        BaseDeDatos repo = context.getBean(BaseDeDatos.class);
+
+        repo.newUsuario("Gonzalo", "gschecho@correo.com");
+
+
+        System.out.println(repo.obtenerNombres());
+
+        List<String> test = repo.obtenerNombres();
+
+        String test2 = test.get(0);
+
+
         final int WIDTH = 600;
         final int HEIGHT = 400;
+
+
 
 
         Label label = new Label("¡Hola desde JavaFX sin FXML!");
         label.setLayoutX(100); // posición horizontal
         label.setLayoutY(150); // posición vertical
 
-        Pane root = new Pane(label); // permite posición absoluta
+        Label label2 = new Label(   test2);
+        label.setLayoutX(150); // posición horizontal
+        label.setLayoutY(200); // posición vertical
+
+        Pane root = new Pane(label, label2); // permite posición absoluta
 
         Scene scene = new Scene(root, WIDTH, HEIGHT);
         stage.setScene(scene);
