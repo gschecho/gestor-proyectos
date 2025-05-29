@@ -7,5 +7,7 @@
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.springBoot_javaFXS_base.controllers.MainController">
 
+
     <Label fx:id="label" text="Texto inicial"/>
+
 </VBox>

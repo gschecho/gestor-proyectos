@@ -1,4 +1,4 @@
-package com.springBoot_javaFXS_base.logica;
+package com.springBoot_javaFXS_base.utils;
 
 
 import org.springframework.jdbc.core.JdbcTemplate;

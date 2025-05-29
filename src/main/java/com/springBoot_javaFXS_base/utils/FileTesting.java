@@ -1,9 +1,6 @@
-package com.springBoot_javaFXS_base.logica;
-
-import org.springframework.web.util.UriBuilder;
+package com.springBoot_javaFXS_base.utils;
 
 import java.io.File;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
