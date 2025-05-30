@@ -5,7 +5,7 @@
     "phone": "600123456",
     "email": "ana@example.com",
     "dni": "12345678A",
-    "IBAN": "ES1234567890123456789012",
+    "iban": "ES1234567890123456789012",
     "privateTransport": true,
     "projects": [
       { "id": 1 },
@@ -18,7 +18,7 @@
     "phone": "600654321",
     "email": "luis@example.com",
     "dni": "87654321B",
-    "IBAN": "ES9876543210987654321098",
+    "iban": "ES9876543210987654321098",
     "privateTransport": false,
     "projects": [
       { "id": 2 }

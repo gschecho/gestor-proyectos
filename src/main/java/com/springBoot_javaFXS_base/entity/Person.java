@@ -26,7 +26,7 @@ public class Person {
     private String email;
 
     private String dni;
-    private String IBAN;
+    private String iban;
     private boolean privateTransport;
 
     @ManyToMany
