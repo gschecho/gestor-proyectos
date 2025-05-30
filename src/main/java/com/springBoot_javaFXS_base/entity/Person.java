@@ -1,8 +1,6 @@
 package com.springBoot_javaFXS_base.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,9 +14,11 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@Table(name = "persons")
 public class Person {
 
     @Id
+    @GeneratedValue
     private long id;
     private String name;
     private String position;
@@ -30,5 +30,10 @@ public class Person {
     private boolean privateTransport;
 
     @ManyToMany
+    @JoinTable(
+            name="person_project",
+            joinColumns = @JoinColumn(name ="person_id"),
+            inverseJoinColumns = @JoinColumn(name="project_id")
+    )
     List<Project> projects;
 }

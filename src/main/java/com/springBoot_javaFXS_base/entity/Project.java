@@ -1,10 +1,7 @@
 package com.springBoot_javaFXS_base.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +19,7 @@ import java.util.List;
 public class Project {
 
     @Id
+    @GeneratedValue
     private long id;
     private String name;
 
@@ -29,9 +27,10 @@ public class Project {
     private Date date;
 
     @ManyToOne
+    @JoinColumn(name = "client_id")
     private Client client;
 
-    @OneToMany
+    @ManyToMany(mappedBy = "projects")
     private List<Person> crew;
 
 

@@ -1,6 +1,7 @@
 package com.springBoot_javaFXS_base.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
@@ -19,6 +20,7 @@ import java.util.List;
 public class Client {
 
     @Id
+    @GeneratedValue
     private long id;
 
     private String name;
@@ -26,6 +28,6 @@ public class Client {
 
     private String number;
 
-    @OneToMany
+    @OneToMany(mappedBy = "client")
     List<Project> projects;
 }

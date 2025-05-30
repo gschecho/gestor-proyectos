@@ -19,12 +19,12 @@ public BaseDeDatos(JdbcTemplate jdbc){
 }
 
     public List<String> obtenerNombres() {
-        return jdbc.query("SELECT nombre FROM usuarios",
-                (rs, rowNum) -> rs.getString("nombre"));
+        return jdbc.query("SELECT name FROM persons",
+                (rs, rowNum) -> rs.getString("name"));
     }
 
     public void newUsuario(String nombre, String email){
-    jdbc.update("INSERT INTO usuarios (nombre, email) VALUES ('" + nombre +"','" + email+"')");
+    jdbc.update("INSERT INTO persons (nombre, email) VALUES ('" + nombre +"','" + email+"')");
 
         System.out.println("Usuario Añadido :"+nombre);
     }

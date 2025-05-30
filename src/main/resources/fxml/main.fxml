@@ -1,13 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox spacing="20" xmlns="http://javafx.com/javafx/17"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.springBoot_javaFXS_base.controllers.MainController">
-
-
-    <Label fx:id="label" text="Texto inicial"/>
-
-</VBox>
+<AnchorPane prefHeight="860.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.springBoot_javaFXS_base.controllers.MainController">
+   <children>
+      <VBox layoutX="518.0" layoutY="100.0" prefHeight="221.0" prefWidth="210.0" spacing="20" />
+      <Button layoutX="950.0" layoutY="796.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="120.0" text="Nuevo Cliente" />
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1200.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </MenuBar>
+   
+      
+          <Label id="welcomeText" fx:id="welcomeText" layoutX="13.0" layoutY="27.0" prefHeight="25.0" prefWidth="1174.0" text="Texto inicial" />
+      <TabPane layoutX="29.0" layoutY="61.0" prefHeight="672.0" prefWidth="1142.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="proyectosTab" text="Proyectos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView layoutX="14.0" layoutY="14.0" prefHeight="561.0" prefWidth="548.0" />
+                        <Button id="proyectosBtnNuevoProyecto" fx:id="proyectosBtnNuevoProyecto" layoutX="1008.0" layoutY="575.0" mnemonicParsing="false" onAction="#onClicProyectosBtnNuevoProyecto" prefHeight="60.0" prefWidth="120.0" text="Nuevo Proyecto" />
+                        <Pagination id="proyectosPaginacion" layoutX="14.0" layoutY="600.0" maxPageIndicatorCount="3" prefHeight="25.0" prefWidth="548.0" />
+                        <TableView fx:id="proyectosTableView" layoutX="15.0" layoutY="14.0" prefHeight="561.0" prefWidth="547.0">
+                          <columns>
+                            <TableColumn id="tableName" fx:id="proyectosTableName" prefWidth="75.0" text="Nombre" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="890.0" layoutY="137.0" text="Nombre :" />
+                        <TextField fx:id="proyectosNameNewProject" layoutX="890.0" layoutY="154.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Button layoutX="783.0" layoutY="796.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="155.0" text="Nuevo Colaborador" />
+   </children>
+</AnchorPane>
