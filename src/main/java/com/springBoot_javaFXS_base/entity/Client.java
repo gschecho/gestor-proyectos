@@ -1,9 +1,6 @@
 package com.springBoot_javaFXS_base.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@Table(name = "clients")
 public class Client {
 
     @Id
@@ -30,4 +28,7 @@ public class Client {
 
     @OneToMany(mappedBy = "client")
     List<Project> projects;
+
+    @OneToMany(mappedBy = "client")
+    List<Person> contacts;
 }

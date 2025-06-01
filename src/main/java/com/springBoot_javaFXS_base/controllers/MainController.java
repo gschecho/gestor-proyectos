@@ -17,6 +17,7 @@ import javafx.scene.text.Text;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
 import java.io.IOException;
 
 @Component
@@ -27,6 +28,9 @@ public class MainController {
 
     @FXML
     private Button proyectosBtnNuevoProyecto;
+
+    @FXML
+    private Button btnClients;
 
     @FXML
     private Label welcomeText;
@@ -52,6 +56,17 @@ public class MainController {
         welcomeText.setText("Botón apretado");
         // Aquí puedes poner cualquier lógica: cambiar vista, mostrar alerta, etc.
     }
+
+    @FXML
+    private void onClickBtnClients(ActionEvent evento) throws IOException {
+        System.out.println("cliente");
+        var separator = File.separator;
+        MainApp.setRoot("views" +separator+"clients");
+
+    }
+
+
+
 
     @FXML
     private void populateTableName(BaseDeDatos bbdd){

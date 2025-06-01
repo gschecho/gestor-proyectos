@@ -20,7 +20,8 @@ public class Person {
     @Id
     @GeneratedValue
     private long id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String position;
     private String phone;
     private String email;
@@ -36,4 +37,9 @@ public class Person {
             inverseJoinColumns = @JoinColumn(name="project_id")
     )
     List<Project> projects;
+
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    Client client;
 }

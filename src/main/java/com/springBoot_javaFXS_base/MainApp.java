@@ -12,7 +12,9 @@ import javafx.stage.Stage;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class MainApp extends Application {
@@ -36,7 +38,8 @@ public class MainApp extends Application {
     }
     private static Parent  loadFXML(String fxml) throws IOException{
         //getResource lee directamente de la carpeta resources hay que especificar el path interior
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/fxml/" + fxml + ".fxml"));
+        var separator = File.separator;
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource(separator + "fxml"+ separator + fxml + ".fxml"));
         loadSpringBootBeans(fxmlLoader);
         return fxmlLoader.load();
     }
@@ -51,7 +54,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = loadFXML("main");
+        Parent root = loadFXML("login");
         scene = new Scene(root); // inicializa la escena
 
         primaryStage.setScene(scene); // asigna la escena al stage

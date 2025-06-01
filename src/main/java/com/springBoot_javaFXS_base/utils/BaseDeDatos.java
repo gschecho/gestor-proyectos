@@ -19,16 +19,17 @@ public BaseDeDatos(JdbcTemplate jdbc){
 }
 
     public List<String> obtenerNombres() {
-        return jdbc.query("SELECT name FROM persons",
-                (rs, rowNum) -> rs.getString("name"));
+        return jdbc.query("SELECT first_name FROM persons",
+                (rs, rowNum) -> rs.getString("first_name"));
     }
 
+    /*
     public void newUsuario(String nombre, String email){
     jdbc.update("INSERT INTO persons (nombre, email) VALUES ('" + nombre +"','" + email+"')");
 
         System.out.println("Usuario Añadido :"+nombre);
     }
-
+*/
 
 
 }

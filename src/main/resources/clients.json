@@ -1,12 +1,15 @@
 [
   {
-    "name": "Juan Pérez",
+    "name": "InnoEnergy",
     "nif": "12345678A",
     "number": "600123456"
   },
   {
-    "name": "María García",
+    "name": "Bioiberica",
     "nif": "87654321B",
-    "number": "600654321"
+    "number": "600654321",
+    "contacts": [
+      {"id": 1}
+    ]
   }
 ]

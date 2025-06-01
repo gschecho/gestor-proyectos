@@ -19,7 +19,7 @@
 <AnchorPane prefHeight="860.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.springBoot_javaFXS_base.controllers.MainController">
    <children>
       <VBox layoutX="518.0" layoutY="100.0" prefHeight="221.0" prefWidth="210.0" spacing="20" />
-      <Button layoutX="950.0" layoutY="796.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="120.0" text="Nuevo Cliente" />
+      <Button fx:id="btnClients" layoutX="950.0" layoutY="796.0" mnemonicParsing="false" onAction="#onClickBtnClients" prefHeight="60.0" prefWidth="120.0" text="Nuevo Cliente" />
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1200.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
