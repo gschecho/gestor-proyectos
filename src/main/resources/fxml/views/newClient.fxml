@@ -12,7 +12,7 @@
    <children>
       <AnchorPane prefHeight="445.0" prefWidth="600.0">
          <children>
-            <Button fx:id="saveNewClientBtn" layoutX="508.0" layoutY="401.0" mnemonicParsing="false" onAction="#saveNewClient" prefHeight="30.0" prefWidth="78.0" text="Guardar" />
+            <Button fx:id="saveNewClientBtn" layoutX="505.0" layoutY="401.0" mnemonicParsing="false" onAction="#saveNewClient" prefHeight="30.0" prefWidth="78.0" text="Guardar" />
             <TextField fx:id="nameNewClient" layoutX="51.0" layoutY="69.0" />
             <ChoiceBox fx:id="newClientContactSelector" layoutX="51.0" layoutY="376.0" prefHeight="25.0" prefWidth="240.0" />
             <TextField fx:id="nifNewClient" layoutX="218.0" layoutY="69.0" />
