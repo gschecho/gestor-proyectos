@@ -83,3 +83,13 @@ tasks.named('test') {
 tasks.withType(GroovyCompile) {
 	groovyOptions.encoding = 'utf-8'
 }
+
+//LOCALIZACION DE LA CARPETA RESOURCES
+
+sourceSets {
+	main {
+		resources {
+			srcDirs = ['src/main/resources']
+		}
+	}
+}

@@ -76,6 +76,6 @@
           </Tab>
         </tabs>
       </TabPane>
-      <Button layoutX="783.0" layoutY="796.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="155.0" text="Nuevo Colaborador" />
+      <Button fx:id="newCol" layoutX="783.0" layoutY="796.0" mnemonicParsing="false" onAction="#newWindow" prefHeight="60.0" prefWidth="155.0" text="Nuevo Colaborador" />
    </children>
 </AnchorPane>

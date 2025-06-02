@@ -10,7 +10,9 @@ import java.util.List;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
+    public List<Person> getAllByClient(Client client);
 
+    public List<Person> findAll();
     public List<Person> findByFirstName(String firstName);
 
 }

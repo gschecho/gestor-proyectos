@@ -6,6 +6,8 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -38,8 +40,9 @@ public class MainApp extends Application {
     }
     private static Parent  loadFXML(String fxml) throws IOException{
         //getResource lee directamente de la carpeta resources hay que especificar el path interior
+        //No hay que utilizar en el loader ya que utiliza / en la ruta
         var separator = File.separator;
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource(separator + "fxml"+ separator + fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource( "/fxml/" + fxml + ".fxml"));
         loadSpringBootBeans(fxmlLoader);
         return fxmlLoader.load();
     }
@@ -60,7 +63,39 @@ public class MainApp extends Application {
         primaryStage.setScene(scene); // asigna la escena al stage
         primaryStage.setTitle("App JavaFX + Spring Boot");
         primaryStage.show();
+
+
+        primaryStage.setOnCloseRequest( event -> {
+            event.consume();
+            logout(primaryStage);
+
+        });
+
+
+
+
     }
+
+
+
+    private boolean confirmarSalida() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Salir de la aplicación");
+        alert.setHeaderText("Estás a punto de salir");
+        alert.setContentText("¿Deseas salir de la aplicación?");
+        return alert.showAndWait().filter(response -> response == ButtonType.OK).isPresent();
+    }
+
+    private void logout(Stage stage) {
+        if (confirmarSalida()) {
+            System.out.println("Cerrando...");
+            stage.close();
+        }
+    }
+
+
+
+
 
 
     @Override

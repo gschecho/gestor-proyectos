@@ -22,7 +22,7 @@ public class LoginController {
     public void btnToMain(ActionEvent event) throws IOException {
         var separator = File.separator;
         System.out.println("Main");
-        MainApp.setRoot("views"+separator+"main");
+        MainApp.setRoot("views/main");
     }
 
     @FXML
@@ -31,7 +31,7 @@ public class LoginController {
 
             System.out.println("cliente");
             var separator = File.separator;
-            MainApp.setRoot("views"+separator+"clients");
+            MainApp.setRoot("views/clients");
 
 
     }

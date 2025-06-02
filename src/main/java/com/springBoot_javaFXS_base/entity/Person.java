@@ -1,10 +1,7 @@
 package com.springBoot_javaFXS_base.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -14,6 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@ToString
 @Table(name = "persons")
 public class Person {
 
@@ -42,4 +40,7 @@ public class Person {
     @ManyToOne
     @JoinColumn(name = "client_id")
     Client client;
+
+
+
 }

@@ -1,10 +1,7 @@
 package com.springBoot_javaFXS_base.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -14,6 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@ToString
 @Table(name = "clients")
 public class Client {
 
@@ -23,7 +21,7 @@ public class Client {
 
     private String name;
     private String nif;
-
+    private String address;
     private String number;
 
     @OneToMany(mappedBy = "client")

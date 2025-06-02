@@ -18,6 +18,6 @@ public class ClientsController {
     @FXML
     private void switchToPrimary() throws IOException {
         var separator = File.separator;
-        MainApp.setRoot("views" +separator+"main");
+        MainApp.setRoot("views/main");
     }
 }
