@@ -29,6 +29,8 @@ import java.io.IOException;
 @Component
 public class MainController {
 
+    public Button newClient;
+
     @Autowired
     BaseDeDatos bbdd;
 
@@ -72,7 +74,7 @@ public class MainController {
     }
 
 @FXML
-private void newWindow(ActionEvent evento) throws IOException{
+private void newClientWindow(ActionEvent evento) throws IOException{
     System.out.println("Nueva ventana");
     Stage stage = new Stage();
     Scene scene;

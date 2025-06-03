@@ -16,10 +16,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="860.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.springBoot_javaFXS_base.controllers.MainController">
+<AnchorPane prefHeight="860.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.springBoot_javaFXS_base.controllers.MainController">
    <children>
       <VBox layoutX="518.0" layoutY="100.0" prefHeight="221.0" prefWidth="210.0" spacing="20" />
-      <Button fx:id="btnClients" layoutX="950.0" layoutY="796.0" mnemonicParsing="false" onAction="#onClickBtnClients" prefHeight="60.0" prefWidth="120.0" text="Nuevo Cliente" />
+      <Button fx:id="btnClients" layoutX="1034.0" layoutY="766.0" mnemonicParsing="false" onAction="#onClickBtnClients" prefHeight="60.0" prefWidth="120.0" text="Clientes" />
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1200.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
@@ -56,7 +56,6 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <ListView layoutX="14.0" layoutY="14.0" prefHeight="561.0" prefWidth="548.0" />
-                        <Button id="proyectosBtnNuevoProyecto" fx:id="proyectosBtnNuevoProyecto" layoutX="1008.0" layoutY="575.0" mnemonicParsing="false" onAction="#onClicProyectosBtnNuevoProyecto" prefHeight="60.0" prefWidth="120.0" text="Nuevo Proyecto" />
                         <Pagination id="proyectosPaginacion" layoutX="14.0" layoutY="600.0" maxPageIndicatorCount="3" prefHeight="25.0" prefWidth="548.0" />
                         <TableView fx:id="proyectosTableView" layoutX="15.0" layoutY="14.0" prefHeight="561.0" prefWidth="547.0">
                           <columns>
@@ -76,6 +75,8 @@
           </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="newCol" layoutX="783.0" layoutY="796.0" mnemonicParsing="false" onAction="#newWindow" prefHeight="60.0" prefWidth="155.0" text="Nuevo Colaborador" />
+      <Button fx:id="newClient" layoutX="29.0" layoutY="766.0" mnemonicParsing="false" onAction="#newClientWindow" prefHeight="60.0" prefWidth="155.0" text="Nuevo Cliente" />
+      <Button fx:id="btnClients1" layoutX="196.0" layoutY="766.0" mnemonicParsing="false" onAction="#onClickBtnClients" prefHeight="60.0" prefWidth="120.0" text="Nuevo claborador" />
+      <Button id="proyectosBtnNuevoProyecto" fx:id="proyectosBtnNuevoProyecto" layoutX="333.0" layoutY="766.0" mnemonicParsing="false" onAction="#onClicProyectosBtnNuevoProyecto" prefHeight="60.0" prefWidth="120.0" text="Nuevo Proyecto" />
    </children>
 </AnchorPane>

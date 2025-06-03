@@ -30,8 +30,16 @@ public class NewClientController {
     private ObservableList<Person> availableContacts;
     private ObservableList<Person> selectedContacts;
 
-    @Autowired private ClientService clientService;
-    @Autowired private PersonService personService;
+
+    private ClientService clientService;
+    private PersonService personService;
+
+
+    public NewClientController(ClientService clientService,PersonService personService ){
+        this.clientService = clientService;
+        this.personService = personService;
+    }
+
 
     @FXML
     public void initialize() {
