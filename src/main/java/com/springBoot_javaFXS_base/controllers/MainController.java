@@ -20,6 +20,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -33,7 +34,7 @@ public class MainController {
    // @Autowired
    // BaseDeDatos bbdd;
 
-
+    private static ConfigurableApplicationContext context;
 
     private final ClientService clientService;
 
@@ -96,7 +97,8 @@ private void newClientWindow(ActionEvent evento) throws IOException{
     String fxml = "views/newClient";
     FXMLLoader fxmlLoader =  new FXMLLoader(MainApp.class.getResource( "/fxml/" + fxml + ".fxml"));
     Parent root = fxmlLoader.load();
-    scene = new Scene(root); // inicializa la escena
+    fxmlLoader.setControllerFactory(context::getBean);
+    scene = new Scene(root); // inicializa la escenas
 
     // Hacer que sea modal
     stage.initModality(Modality.APPLICATION_MODAL);
