@@ -31,14 +31,11 @@ public class NewClientController {
     private ObservableList<Person> selectedContacts;
 
 
-    private ClientService clientService;
-    private PersonService personService;
+    @Autowired  private ClientService clientService;
+    @Autowired PersonService personService;
 
 
-    public NewClientController(ClientService clientService,PersonService personService ){
-        this.clientService = clientService;
-        this.personService = personService;
-    }
+
 
 
     @FXML

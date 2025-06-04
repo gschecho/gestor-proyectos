@@ -1,6 +1,6 @@
 package com.springBoot_javaFXS_base;
 
-import com.springBoot_javaFXS_base.utils.BaseDeDatos;
+//import com.springBoot_javaFXS_base.utils.BaseDeDatos;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -44,6 +44,9 @@ public class MainApp extends Application {
         var separator = File.separator;
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource( "/fxml/" + fxml + ".fxml"));
         loadSpringBootBeans(fxmlLoader);
+        // Spring inyecta el controlador asi no hace falta escribirlo en FXML.
+        // Importante
+        fxmlLoader.setControllerFactory(context::getBean);
         return fxmlLoader.load();
     }
 

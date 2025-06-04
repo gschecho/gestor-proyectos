@@ -1,10 +1,11 @@
 package com.springBoot_javaFXS_base.controllers;
 
 
-import com.fasterxml.jackson.databind.ser.Serializers;
 import com.springBoot_javaFXS_base.MainApp;
-import com.springBoot_javaFXS_base.entity.Project;
-import com.springBoot_javaFXS_base.utils.BaseDeDatos;
+import com.springBoot_javaFXS_base.service.ClientService;
+import com.springBoot_javaFXS_base.service.PersonService;
+//import com.springBoot_javaFXS_base.utils.BaseDeDatos;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,10 +18,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -31,8 +30,15 @@ public class MainController {
 
     public Button newClient;
 
-    @Autowired
-    BaseDeDatos bbdd;
+   // @Autowired
+   // BaseDeDatos bbdd;
+
+
+
+    private final ClientService clientService;
+
+    private final PersonService personService;
+
 
     @FXML
     private Button proyectosBtnNuevoProyecto;
@@ -42,6 +48,11 @@ public class MainController {
 
     @FXML
     private Label welcomeText;
+
+    public MainController(ClientService clientService, PersonService personService) {
+        this.clientService = clientService;
+        this.personService = personService;
+    }
 
     @FXML
     private void switchToPrimary() throws IOException {
@@ -57,6 +68,9 @@ public class MainController {
 
 
     private ObservableList<String> project;
+
+
+
 
 
     @FXML
@@ -109,8 +123,14 @@ private void newClientWindow(ActionEvent evento) throws IOException{
 
 
     @FXML
-    private void populateTableName(BaseDeDatos bbdd){
-        this.project = FXCollections.observableArrayList(bbdd.obtenerNombres());
+    private void populateTableName(/*BaseDeDatos bbdd*/){
+        //bbdd.obtenerNombres()
+        this.project = FXCollections.observableArrayList(
+                personService.findAllPersons().stream()
+                        .map(person -> person.getFirstName()) // o el campo que quieras mostrar
+                        .toList()
+        );
+
     }
 
 
@@ -118,7 +138,7 @@ private void newClientWindow(ActionEvent evento) throws IOException{
     public void initialize() {
 
         welcomeText.setText("Bienvenido");
-        populateTableName( bbdd);
+        populateTableName( /*bbdd*/);
 
         // Asociar columna con el valor de String directamente
         proyectosTableName.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue()));

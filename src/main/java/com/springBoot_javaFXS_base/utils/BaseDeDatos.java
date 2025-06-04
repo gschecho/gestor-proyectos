@@ -1,8 +1,6 @@
+/*
 package com.springBoot_javaFXS_base.utils;
 
-
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -24,12 +22,9 @@ public BaseDeDatos(JdbcTemplate jdbc){
     }
 
     /*
-    public void newUsuario(String nombre, String email){
-    jdbc.update("INSERT INTO persons (nombre, email) VALUES ('" + nombre +"','" + email+"')");
-
-        System.out.println("Usuario Añadido :"+nombre);
-    }
-*/
-
-
+   // public void newUsuario(String nombre, String email){
+   // jdbc.update("INSERT INTO persons (nombre, email) VALUES ('" + nombre +"','" + email+"')");
+   //   System.out.println("Usuario Añadido :"+nombre);
+   // }
 }
+*/
