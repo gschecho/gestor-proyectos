@@ -4,7 +4,7 @@ import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class FileTesting {
+public class FileManager {
     public static void main(String[] args) {
 
         Path myPath = Paths.get("");

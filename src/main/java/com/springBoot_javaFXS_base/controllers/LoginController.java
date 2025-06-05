@@ -36,4 +36,11 @@ public class LoginController {
 
     }
 
+    /*TODO
+     1 Checkear usuario existe, dar permisos.
+     2 crear sesion
+
+
+    */
+
 }
