@@ -18,12 +18,15 @@ import java.util.List;
 public class Project {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
     private String name;
 
     private String status;
-    private Date date;
+    private Date dateStart;
+
+    private Date deadline;
+
 
     @ManyToOne
     @JoinColumn(name = "client_id")
@@ -33,4 +36,14 @@ public class Project {
     private List<Person> crew;
 
 
+
+    private enum status{
+        BRIEF,
+        PRESUPUESTADO,
+        GUION,
+        PRODUCCIÓN,
+        POSTPRODUCCIÓN,
+        FINALIZADO,
+        ENTRGADO
+    };
 }

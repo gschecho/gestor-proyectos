@@ -16,7 +16,7 @@ import java.util.List;
 public class Client {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
     private String name;

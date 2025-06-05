@@ -16,7 +16,7 @@ import java.util.List;
 public class Person {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
     private String firstName;
     private String lastName;
