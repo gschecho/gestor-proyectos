@@ -19,6 +19,19 @@ import java.util.List;
 @Component
 public class NewClientController {
 
+
+    /*TODO
+    Rellenar formulario,
+    Rehacer formulario,
+    Guardar formulario en bbdd,
+    Modificar el formulario,
+
+    Seleccionar multiples contactos
+
+
+     */
+
+
     @FXML public Button saveNewClientBtn;
     @FXML public Button removeContactBtn;
     @FXML public TextField nameNewClient;
